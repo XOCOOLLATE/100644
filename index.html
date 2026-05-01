@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCS Gesso | Produtos e Serviços</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#inicio" aria-label="Voltar para o início">
+          <img class="brand-logo" src="img/logo-ccs.png" alt="Logo CCS Gesso" />
+        </a>
+
+        <nav class="main-nav" aria-label="Menu principal">
+          <a href="#produtos">Produtos</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#novidades">Novidades</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <form class="search-form" role="search">
+          <label class="sr-only" for="busca">Buscar produto</label>
+          <input id="busca" type="search" placeholder="Buscar produto" />
+          <button type="submit" aria-label="Buscar">Ir</button>
+        </form>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero-banner">
+        <img
+          src="img/referencia-yampi.jpeg"
+          alt="Banner CCS Gesso com produtos e marcas parceiras"
+        />
+      </section>
+
+      <section class="partners" aria-labelledby="marcas-titulo">
+        <h2 id="marcas-titulo">Algumas marcas parceiras</h2>
+        <div class="marquee-wrapper">
+          <div class="marquee-track" id="marquee-track">
+            <button class="partner-logo-btn" data-marca="Coral">
+              <img src="img/marcas/coral.png" alt="Coral" />
+            </button>
+            <button class="partner-logo-btn" data-marca="Knauf">
+              <img src="img/marcas/knauf.png" alt="Knauf" />
+            </button>
+            <button class="partner-logo-btn" data-marca="Gypsum">
+              <img src="img/marcas/gypsum.png" alt="Gypsum" />
+            </button>
+            <button class="partner-logo-btn" data-marca="Tinsul">
+              <img src="img/marcas/tinsul.png" alt="Tinsul" />
+            </button>
+            <button class="partner-logo-btn" data-marca="Tedox">
+              <img src="img/marcas/tedox.png" alt="Tedox" />
+            </button>
+            <button class="partner-logo-btn" data-marca="Vonder">
+              <img src="img/marcas/vonder.png" alt="Vonder" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="produtos">
+        <div class="section-heading">
+          <p class="eyebrow">Catálogo inicial</p>
+          <h2>Produtos para reservar</h2>
+          <p>
+            Nesta primeira etapa o cliente escolhe o item e chama no WhatsApp.
+            Depois podemos evoluir para carrinho, pagamento e estoque.
+          </p>
+        </div>
+
+        <div class="product-grid" id="lista-produtos"></div>
+      </section>
+
+      <section class="section split" id="servicos">
+        <div>
+          <p class="eyebrow">Serviços e mão de obra</p>
+          <h2>Área para mostrar instalações, obras e orçamentos.</h2>
+          <p>
+            Aqui entra o lado de blog/portfólio: fotos de obras, explicações
+            sobre forro, divisória, drywall, pintura e dicas para o cliente.
+          </p>
+        </div>
+
+        <div class="service-list">
+          <article>
+            <h3>Forros de gesso</h3>
+            <p>Divulgue instalações, antes e depois e tipos de acabamento.</p>
+          </article>
+
+          <article>
+            <h3>Divisórias</h3>
+            <p>Mostre soluções para casas, lojas, escritórios e reformas.</p>
+          </article>
+
+          <article>
+            <h3>Orçamento local</h3>
+            <p>Direcione o cliente para enviar medidas, fotos e endereço.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="novidades">
+        <div class="section-heading">
+          <p class="eyebrow">Fórum de atualizações</p>
+          <h2>Novidades da loja</h2>
+        </div>
+
+        <div class="updates-grid">
+          <article>
+            <span>Novo item</span>
+            <h3>Massas e complementos</h3>
+            <p>Espaço para avisar quando chegar produto novo ou reposição.</p>
+          </article>
+
+          <article>
+            <span>Dica</span>
+            <h3>Como escolher placa de gesso</h3>
+            <p>
+              Conteúdos simples ajudam o cliente e melhoram o site no Google.
+            </p>
+          </article>
+
+          <article>
+            <span>Serviço</span>
+            <h3>Obra finalizada</h3>
+            <p>Publique fotos reais dos serviços feitos pela equipe.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contato">
+      <div>
+        <strong>CCS Gesso</strong>
+        <p>Produtos, serviços e entregas dentro da região.</p>
+      </div>
+
+      <a
+        class="button primary"
+        href="https://wa.me/5551981727883"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Chamar no WhatsApp
+      </a>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
+<button class="partner-button" data-marca="Todos">Todos</button>
