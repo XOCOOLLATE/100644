@@ -14,54 +14,203 @@
   </head>
 
   <body>
-    <header class="site-header">
-      <div class="header-inner">
+    <header class="top-header">
+      <div class="header-container">
         <a class="brand" href="#inicio" aria-label="Voltar para o início">
           <img class="brand-logo" src="img/logo-ccs.png" alt="Logo CCS Gesso" />
         </a>
 
-        <nav class="main-nav" aria-label="Menu principal">
-          <a href="#produtos">Produtos</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#novidades">Novidades</a>
-          <a href="#contato">Contato</a>
-        </nav>
-
         <form class="search-form" role="search">
           <label class="sr-only" for="busca">Buscar produto</label>
-          <input id="busca" type="search" placeholder="Buscar produto" />
-          <button type="submit" aria-label="Buscar">Ir</button>
+          <input
+            id="busca"
+            type="search"
+            placeholder="Busque aqui seu produto"
+          />
+          <button type="submit">Buscar</button>
         </form>
+
+       <nav class="header-actions mega-menu" aria-label="Menu rápido">
+  <div class="mega-item">
+    <button type="button">Serviços</button>
+
+    <div class="mega-dropdown small">
+      <a href="#servicos">Drywall</a>
+      <a href="#servicos">Steel Frame</a>
+      <a href="#servicos">Divisórias Eucatex</a>
+      <a href="#servicos">Forro Modular EPS</a>
+      <a href="#servicos">Forros de gesso</a>
+      <a href="#servicos">Orçamento de mão de obra</a>
+    </div>
+  </div>
+
+  <div class="mega-item">
+    <button type="button">Catálogo</button>
+
+    <div class="mega-dropdown catalogo">
+      <div>
+        <h4>Itens</h4>
+        <a href="#produtos">Pincel</a>
+        <a href="#produtos">Parafusadeira</a>
+        <a href="#produtos">Tinta</a>
+        <a href="#produtos">Placas de gesso</a>
+        <a href="#produtos">Massas</a>
+        <a href="#produtos">Perfis metálicos</a>
+        <a href="#produtos">Parafusos</a>
       </div>
+
+      <div>
+        <h4>Marcas</h4>
+        <a href="#marcas">Tigre</a>
+        <a href="#marcas">DeWalt</a>
+        <a href="#marcas">Coral</a>
+        <a href="#marcas">Knauf</a>
+        <a href="#marcas">Gypsum</a>
+        <a href="#marcas">Vonder</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mega-item">
+    <button type="button">Contato</button>
+
+    <div class="mega-dropdown small">
+      <a href="https://wa.me/5551981727883" target="_blank" rel="noreferrer">
+        WhatsApp
+      </a>
+      <a href="#contato">Telefone</a>
+      <a href="#contato">Endereço da loja</a>
+      <a href="#contato">Redes sociais</a>
+      <a href="#contato">Horário de atendimento</a>
+    </div>
+  </div>
+
+  <div class="mega-item">
+    <button type="button">Parceiro</button>
+
+    <div class="mega-dropdown formal">
+      <h4>Área para parceiros</h4>
+      <p>
+        Espaço para empresas enviarem propostas comerciais, produtos, preços,
+        parcerias ou contratação direta da nossa mão de obra.
+      </p>
+
+      <a href="#contato">Enviar proposta comercial</a>
+      <a href="#contato">Contratar mão de obra</a>
+      <a href="#contato">Falar com o setor responsável</a>
+    </div>
+  </div>
+
+  <div class="mega-item">
+    <button type="button">Outros</button>
+
+    <div class="mega-dropdown small">
+      <a href="#contato">Trabalhe conosco</a>
+      <a href="#novidades">Perguntas frequentes</a>
+      <a href="#contato">Formas de pagamento</a>
+      <a href="#contato">Região que atendemos</a>
+      <a href="#contato">Bandeiras aceitas</a>
+    </div>
+  </div>
+</nav>
+
+      <nav class="category-nav" aria-label="Categorias principais">
+        <a href="#produtos">Produtos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#novidades">Novidades</a>
+        <a href="#marcas">Marcas</a>
+        <a href="#contato">Contato</a>
+      </nav>
     </header>
 
     <main id="inicio">
-      <section class="hero-banner">
-        <img
-          src="img/referencia-yampi.jpeg"
-          alt="Banner CCS Gesso com produtos e marcas parceiras"
-        />
+      <section class="benefits-bar">
+        <div>
+          <span>🚚</span>
+          <p>Entrega dentro da região</p>
+        </div>
+
+        <div>
+          <span>🏢</span>
+          <p>Loja física para retirada</p>
+        </div>
+
+        <div>
+          <span>🧱</span>
+          <p>Materiais para drywall e construção a seco</p>
+        </div>
+
+        <div>
+          <span>📲</span>
+          <p>Orçamento rápido pelo WhatsApp</p>
+        </div>
       </section>
 
-      <section class="partners" aria-labelledby="marcas-titulo">
-        <h2 id="marcas-titulo">Algumas marcas parceiras</h2>
+      <section class="hero-store">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+          <p class="eyebrow">CCS Gesso</p>
+          <h1>Soluções completas para sua obra</h1>
+          <p>
+            Drywall, forros, divisórias, massas, perfis, ferramentas e materiais
+            para construção a seco com atendimento especializado.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              class="button primary"
+              href="https://wa.me/5551981727883"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Peça seu orçamento
+            </a>
+
+            <a class="button secondary" href="#produtos"> Ver produtos </a>
+          </div>
+        </div>
+      </section>
+
+    <form class="newsletter-box" id="newsletter-form">
+  <div class="newsletter-title">
+    <span>📩</span>
+    <strong>Receba ofertas e novidades da loja</strong>
+  </div>
+
+  <input id="newsletter-nome" type="text" placeholder="Seu nome" required />
+  <input id="newsletter-email" type="email" placeholder="Seu email" required />
+
+  <button id="newsletter-botao" type="submit">Enviar</button>
+
+  <p id="newsletter-mensagem" class="newsletter-mensagem"></p>
+</form>
+
+      <section class="partners" id="marcas" aria-labelledby="marcas-titulo">
+        <h2 id="marcas-titulo">Veja nossas marcas</h2>
+
         <div class="marquee-wrapper">
           <div class="marquee-track" id="marquee-track">
             <button class="partner-logo-btn" data-marca="Coral">
               <img src="img/marcas/coral.png" alt="Coral" />
             </button>
+
             <button class="partner-logo-btn" data-marca="Knauf">
               <img src="img/marcas/knauf.png" alt="Knauf" />
             </button>
+
             <button class="partner-logo-btn" data-marca="Gypsum">
               <img src="img/marcas/gypsum.png" alt="Gypsum" />
             </button>
+
             <button class="partner-logo-btn" data-marca="Tinsul">
               <img src="img/marcas/tinsul.png" alt="Tinsul" />
             </button>
+
             <button class="partner-logo-btn" data-marca="Tedox">
               <img src="img/marcas/tedox.png" alt="Tedox" />
             </button>
+
             <button class="partner-logo-btn" data-marca="Vonder">
               <img src="img/marcas/vonder.png" alt="Vonder" />
             </button>
@@ -71,11 +220,11 @@
 
       <section class="section" id="produtos">
         <div class="section-heading">
-          <p class="eyebrow">Catálogo inicial</p>
+          <p class="eyebrow dark">Catálogo inicial</p>
           <h2>Produtos para reservar</h2>
           <p>
-            Nesta primeira etapa o cliente escolhe o item e chama no WhatsApp.
-            Depois podemos evoluir para carrinho, pagamento e estoque.
+            Escolha o item e chame nossa equipe no WhatsApp para consultar
+            disponibilidade, valores e entrega.
           </p>
         </div>
 
@@ -84,35 +233,35 @@
 
       <section class="section split" id="servicos">
         <div>
-          <p class="eyebrow">Serviços e mão de obra</p>
-          <h2>Área para mostrar instalações, obras e orçamentos.</h2>
+          <p class="eyebrow dark">Serviços e mão de obra</p>
+          <h2>Instalações, obras e orçamentos personalizados.</h2>
           <p>
-            Aqui entra o lado de blog/portfólio: fotos de obras, explicações
-            sobre forro, divisória, drywall, pintura e dicas para o cliente.
+            Atendemos projetos de forro, divisórias, drywall, reformas e
+            soluções para ambientes residenciais e comerciais.
           </p>
         </div>
 
         <div class="service-list">
           <article>
             <h3>Forros de gesso</h3>
-            <p>Divulgue instalações, antes e depois e tipos de acabamento.</p>
+            <p>Instalação, acabamento e soluções para ambientes internos.</p>
           </article>
 
           <article>
             <h3>Divisórias</h3>
-            <p>Mostre soluções para casas, lojas, escritórios e reformas.</p>
+            <p>Projetos para casas, lojas, escritórios e reformas.</p>
           </article>
 
           <article>
             <h3>Orçamento local</h3>
-            <p>Direcione o cliente para enviar medidas, fotos e endereço.</p>
+            <p>Envie medidas, fotos e endereço para uma cotação rápida.</p>
           </article>
         </div>
       </section>
 
       <section class="section" id="novidades">
         <div class="section-heading">
-          <p class="eyebrow">Fórum de atualizações</p>
+          <p class="eyebrow dark">Atualizações</p>
           <h2>Novidades da loja</h2>
         </div>
 
@@ -120,21 +269,19 @@
           <article>
             <span>Novo item</span>
             <h3>Massas e complementos</h3>
-            <p>Espaço para avisar quando chegar produto novo ou reposição.</p>
+            <p>Produtos para acabamento, tratamento de juntas e obra.</p>
           </article>
 
           <article>
             <span>Dica</span>
             <h3>Como escolher placa de gesso</h3>
-            <p>
-              Conteúdos simples ajudam o cliente e melhoram o site no Google.
-            </p>
+            <p>Conteúdos simples para ajudar o cliente na escolha certa.</p>
           </article>
 
           <article>
             <span>Serviço</span>
             <h3>Obra finalizada</h3>
-            <p>Publique fotos reais dos serviços feitos pela equipe.</p>
+            <p>Espaço para publicar fotos reais dos serviços feitos.</p>
           </article>
         </div>
       </section>
@@ -159,5 +306,3 @@
     <script src="js/script.js"></script>
   </body>
 </html>
-
-<button class="partner-button" data-marca="Todos">Todos</button>
