@@ -132,23 +132,21 @@ if (track) {
 document.querySelectorAll(".partner-logo-btn").forEach((botao) => {
   botao.addEventListener("click", () => {
     const marcaSelecionada = botao.dataset.marca;
+
     const produtosFiltrados = produtos.filter(
       (p) => p.marca === marcaSelecionada,
     );
+
     mostrarProdutos(produtosFiltrados);
     document.querySelector("#produtos").scrollIntoView({ behavior: "smooth" });
   });
 });
 
-// Envio da newsletter para Google Sheets
 const newsletterForm = document.querySelector("#newsletter-form");
 const newsletterNome = document.querySelector("#newsletter-nome");
 const newsletterEmail = document.querySelector("#newsletter-email");
 const newsletterMensagem = document.querySelector("#newsletter-mensagem");
 const newsletterBotao = document.querySelector("#newsletter-botao");
-
-const googleScriptURL =
-  "https://script.google.com/macros/s/AKfycbzWcOCF8wNA-Dv6TEqyWf51B4lQyivzEEebqDqOheQdmI8OZJc8_RF9rvpkw5XIWSA1/exec";
 
 if (newsletterForm) {
   newsletterForm.addEventListener("submit", async (evento) => {
@@ -158,9 +156,9 @@ if (newsletterForm) {
     const email = newsletterEmail.value.trim();
 
     if (!nome || !email) {
-      newsletterMensagem.textContent = "Preencha seu nome e email.";
-      newsletterMensagem.classList.remove("sucesso");
+      newsletterMensagem.textContent = "Preencha seu nome e e-mail.";
       newsletterMensagem.classList.add("erro");
+      newsletterMensagem.classList.remove("sucesso");
       return;
     }
 
@@ -172,25 +170,30 @@ if (newsletterForm) {
     newsletterBotao.textContent = "Enviando...";
 
     try {
-      await fetch(googleScriptURL, {
+      ("https://script.google.com/macros/s/AKfycbzWcOCF8wNA-Dv6TEqyWf51B4lQyivzEEebqDqOheQdmI8OZJc8_RF9rvpkw5XIWSA1/exec");
+      const urlGoogleForms =
+        "https://script.google.com/macros/s/AKfycbzWcOCF8wNA-Dv6TEqyWf51B4lQyivzEEebqDqOheQdmI8OZJc8_RF9rvpkw5XIWSA1/exec";
+
+      const dados = new FormData();
+      dados.append("entry.0000000000", nome);
+      dados.append("entry.1111111111", email);
+
+      await fetch(urlGoogleForms, {
         method: "POST",
         mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          nome: nome,
-          email: email,
-        }),
+        body: dados,
       });
 
       newsletterMensagem.textContent = "Cadastro enviado com sucesso!";
       newsletterMensagem.classList.add("sucesso");
+      newsletterMensagem.classList.remove("erro");
 
       newsletterForm.reset();
     } catch (erro) {
-      newsletterMensagem.textContent = "Erro ao enviar. Tente novamente.";
+      newsletterMensagem.textContent =
+        "Não foi possível enviar. Tente novamente.";
       newsletterMensagem.classList.add("erro");
+      newsletterMensagem.classList.remove("sucesso");
     } finally {
       newsletterBotao.disabled = false;
       newsletterBotao.textContent = "Enviar";
