@@ -1801,3 +1801,88 @@ main {
     gap: 58px;
   }
 }
+
+/* Correção final da barra de marcas */
+.partners {
+  width: 100%;
+  max-width: 100%;
+  margin: 44px 0 0;
+  padding: 48px 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.partners h2 {
+  margin: 0 0 28px;
+  text-align: center;
+  color: var(--azul);
+  text-transform: uppercase;
+  font-size: 1.45rem;
+  font-weight: 900;
+}
+
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 18px 0;
+  background: #ffffff;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  width: max-content;
+  animation: marquee-scroll 24s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.partner-logo-btn {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.partner-logo-btn:hover {
+  transform: scale(1.06);
+}
+
+.partner-logo-btn img {
+  height: 74px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
+  border: 0;
+  box-shadow: none;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 920px) {
+  .partner-logo-btn img {
+    height: 58px;
+    max-width: 150px;
+  }
+
+  .marquee-track {
+    gap: 52px;
+  }
+}

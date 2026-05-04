@@ -51,6 +51,14 @@ const produtos = [
     preco: "Orcamento",
     icone: "S",
   },
+  {
+    nome: "Ferramentas DeWalt",
+    categoria: "Ferramentas",
+    marca: "DeWalt",
+    descricao: "Ferramentas elétricas e acessórios para instalação e obra.",
+    preco: "Consultar",
+    icone: "D",
+  },
 ];
 
 const listaProdutos = document.querySelector("#lista-produtos");
@@ -148,55 +156,53 @@ const newsletterEmail = document.querySelector("#newsletter-email");
 const newsletterMensagem = document.querySelector("#newsletter-mensagem");
 const newsletterBotao = document.querySelector("#newsletter-botao");
 
+const googleScriptURL =
+  "https://script.google.com/macros/s/AKfycbzWcOCF8wNA-Dv6TEqyWf51B41OyivzEEEbqDqQheOdmI8OZJc8_RF9rypkw5XIW5A1/exec";
+
 if (newsletterForm) {
   newsletterForm.addEventListener("submit", async (evento) => {
     evento.preventDefault();
-
-    const nome = newsletterNome.value.trim();
-    const email = newsletterEmail.value.trim();
-
-    if (!nome || !email) {
-      newsletterMensagem.textContent = "Preencha seu nome e e-mail.";
-      newsletterMensagem.classList.add("erro");
-      newsletterMensagem.classList.remove("sucesso");
-      return;
-    }
-
-    newsletterMensagem.textContent = "Enviando...";
-    newsletterMensagem.classList.remove("erro");
-    newsletterMensagem.classList.remove("sucesso");
-
-    newsletterBotao.disabled = true;
-    newsletterBotao.textContent = "Enviando...";
-
-    try {
-      ("https://script.google.com/macros/s/AKfycbzWcOCF8wNA-Dv6TEqyWf51B4lQyivzEEebqDqOheQdmI8OZJc8_RF9rvpkw5XIWSA1/exec");
-      const urlGoogleForms =
-        "https://script.google.com/macros/s/AKfycbzWcOCF8wNA-Dv6TEqyWf51B4lQyivzEEebqDqOheQdmI8OZJc8_RF9rvpkw5XIWSA1/exec";
-
-      const dados = new FormData();
-      dados.append("entry.0000000000", nome);
-      dados.append("entry.1111111111", email);
-
-      await fetch(urlGoogleForms, {
-        method: "POST",
-        mode: "no-cors",
-        body: dados,
-      });
-
-      newsletterMensagem.textContent = "Cadastro enviado com sucesso!";
-      newsletterMensagem.classList.add("sucesso");
-      newsletterMensagem.classList.remove("erro");
-
-      newsletterForm.reset();
-    } catch (erro) {
-      newsletterMensagem.textContent =
-        "Não foi possível enviar. Tente novamente.";
-      newsletterMensagem.classList.add("erro");
-      newsletterMensagem.classList.remove("sucesso");
-    } finally {
-      newsletterBotao.disabled = false;
-      newsletterBotao.textContent = "Enviar";
-    }
   });
+}
+
+const nome = newsletterNome.value.trim();
+const email = newsletterEmail.value.trim();
+
+if (!nome || !email) {
+  newsletterMensagem.textContent = "Preencha seu nome e e-mail.";
+  newsletterMensagem.classList.add("erro");
+  newsletterMensagem.classList.remove("sucesso");
+  return;
+}
+
+newsletterMensagem.textContent = "Enviando...";
+newsletterMensagem.classList.remove("erro");
+newsletterMensagem.classList.remove("sucesso");
+
+newsletterBotao.disabled = true;
+newsletterBotao.textContent = "Enviando...";
+
+try {
+  const dados = new FormData();
+  dados.append("nome", nome);
+  dados.append("email", email);
+
+  await fetch(googleScriptURL, {
+    method: "POST",
+    mode: "no-cors",
+    body: dados,
+  });
+
+  newsletterMensagem.textContent = "Cadastro enviado com sucesso!";
+  newsletterMensagem.classList.add("sucesso");
+  newsletterMensagem.classList.remove("erro");
+
+  newsletterForm.reset();
+} catch (erro) {
+  newsletterMensagem.textContent = "Não foi possível enviar. Tente novamente.";
+  newsletterMensagem.classList.add("erro");
+  newsletterMensagem.classList.remove("sucesso");
+} finally {
+  newsletterBotao.disabled = false;
+  newsletterBotao.textContent = "Enviar";
 }
