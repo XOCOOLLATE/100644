@@ -1886,3 +1886,146 @@ main {
     gap: 52px;
   }
 }
+.partners {
+  width: 100%;
+  padding: 36px 0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.partners h2 {
+  text-align: center;
+  color: #2f3192;
+  font-size: 1.7rem;
+  margin-bottom: 28px;
+  font-weight: 800;
+}
+
+.marquee-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  user-select: none;
+  scrollbar-width: none;
+}
+
+.marquee-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.marquee-wrapper:active {
+  cursor: grabbing;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  width: max-content;
+  padding: 18px 40px;
+  animation: marcasRolando 28s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.partner-logo-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-logo-btn img {
+  max-width: 140px;
+  max-height: 70px;
+  object-fit: contain;
+  filter: grayscale(10%);
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+  pointer-events: none;
+}
+
+.partner-logo-btn:hover img {
+  transform: scale(1.08);
+  filter: grayscale(0%);
+}
+
+@keyframes marcasRolando {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .partners {
+    padding: 28px 0;
+  }
+
+  .partners h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .marquee-track {
+    gap: 36px;
+    padding: 14px 24px;
+    animation-duration: 20s;
+  }
+
+  .partner-logo-btn img {
+    max-width: 110px;
+    max-height: 58px;
+  }
+}
+.partner-logo-btn {
+  cursor: pointer;
+}
+
+.partner-logo-btn:focus-visible {
+  outline: 3px solid var(--amarelo);
+  outline-offset: 8px;
+  border-radius: 6px;
+}
+/* Mantém os cards do menu abertos para o cliente conseguir clicar */
+.header-actions.mega-menu,
+.header-actions.mega-menu .mega-item {
+  overflow: visible;
+}
+
+.header-actions.mega-menu .mega-item {
+  position: relative;
+}
+
+.header-actions.mega-menu .mega-item::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  top: 100%;
+  height: 18px;
+  z-index: 998;
+}
+
+.header-actions.mega-menu .mega-dropdown {
+  z-index: 999;
+}
+
+.header-actions.mega-menu .mega-item:hover .mega-dropdown,
+.header-actions.mega-menu .mega-item:focus-within .mega-dropdown {
+  display: grid;
+}
+.header-actions.mega-menu .mega-item.menu-aberto .mega-dropdown {
+  display: grid;
+}
