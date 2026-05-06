@@ -134,7 +134,9 @@ mostrarProdutos(produtos);
 const track = document.querySelector("#marquee-track");
 
 if (track) {
-  const logosOriginais = Array.from(track.querySelectorAll(".partner-logo-btn"));
+  const logosOriginais = Array.from(
+    track.querySelectorAll(".partner-logo-btn"),
+  );
 
   logosOriginais.forEach((logo) => {
     const clone = logo.cloneNode(true);
